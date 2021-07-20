@@ -16,7 +16,12 @@ public abstract class Student extends Person {
     private int studentID;
     private Grade grade;
     private List<String> learningSubject;
-
+    
+    
+    public Student{
+    	studentID = 0;
+    	learningSubject = new ArrayList<String>(); 
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -41,9 +46,28 @@ public abstract class Student extends Person {
                 '}';
     }
 
-    abstract void addSubject();
+    abstract void addSubject(String subname) {
+    	int a=0;
+    	for(String temp: learningSubject) {
+    		if(temp.equals(subname)) {
+    			a+=1;
+    		}
+    	}
+    	if(a>0) {
+    		System.out.println("Already have this course!")
+    	}
+    	else {
+    		learningSubject.add(subname);
+    	}   
+    }
 
-    abstract void dropSubject();
+    abstract void dropSubject(String subname) {
+       	for(String temp: learningSubject) {
+    		if(temp.equals(subname)) {
+    			learningSubject.remove(temp);
+    		}
+    	}
+    }
 
     //grade related methods
 
