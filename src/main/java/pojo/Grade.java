@@ -1,5 +1,5 @@
 package pojo;
-
+import java.util.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +16,11 @@ import java.util.Objects;
 public abstract class Grade {
     private double avg; // all tests
     private Map<String, Integer> examsScore; // <examName, score>
-
+    
+    public Grade{
+    	examsScore = new Map<String, Integer>();
+    	avg = 0.0;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -38,7 +42,14 @@ public abstract class Grade {
                 '}';
     }
 
-    abstract double calculateAvg();
+    abstract public double calculateAvg() {
+    	double a = 0;
+    	for(Map.Entry<String, Integer> entry:examsScore.entrySet()) {
+    		a+=entry.getValue()
+    	}
+    	a = (a/examsScore.size());
+    	return a;
+    }
 
     private Integer addEntry(String name, Integer score){
         return examsScore.put(name, score);
@@ -48,7 +59,13 @@ public abstract class Grade {
 
     abstract void modifyEntry();
 
-    abstract Integer getScore(String examName);
+    abstract double getScore(String examName) {
+    	for(Map.Entry<String, Integer> entry:examsScore.entrySet()) {
+    		if(Entry.getKey() == examName) {
+    			return Entry.getValue();
+    		}
+    	}
+    }
 
     abstract void emptyAll();
 
