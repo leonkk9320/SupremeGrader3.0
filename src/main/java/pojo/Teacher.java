@@ -15,11 +15,7 @@ public abstract class Teacher {
     private int teacherID;
     private List<Subject> teachingSubject;
 
-    abstract void addSubject();
+    public abstract void addSubject(Subject subject);
 
-    abstract void dropSubject();
-
-
-
-
+    public abstract void dropSubject(int index);
 }

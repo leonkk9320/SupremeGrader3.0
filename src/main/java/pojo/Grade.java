@@ -14,8 +14,8 @@ import java.util.Objects;
 @Getter
 @Setter
 public abstract class Grade {
-    private double avg; // all tests
-    private Map<String, Integer> examsScore; // <examName, score>
+    public double avg; // all tests
+    public Map<String, Integer> examsScore; // <examName, score>
 
     @Override
     public boolean equals(Object o) {
@@ -38,18 +38,18 @@ public abstract class Grade {
                 '}';
     }
 
-    abstract double calculateAvg();
+    public abstract double calculateAvg();
 
-    private Integer addEntry(String name, Integer score){
+    public Integer addEntry(String name, Integer score){
         return examsScore.put(name, score);
     }
 
-    abstract Integer deleteEntry();
+    public abstract Integer deleteEntry(String examName);
 
-    abstract void modifyEntry();
+    public abstract void modifyEntry(String examName, Integer score);
 
-    abstract Integer getScore(String examName);
+    public abstract Integer getScore(String examName);
 
-    abstract void emptyAll();
+    public abstract void emptyAll();
 
 }

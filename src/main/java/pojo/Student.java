@@ -41,21 +41,21 @@ public abstract class Student extends Person {
                 '}';
     }
 
-    abstract void addSubject();
+    public abstract void addSubject(String name);
 
-    abstract void dropSubject();
+    public abstract void dropSubject(String name);
 
     //grade related methods
 
-    abstract void queryAvg();
+    public abstract double queryAvg();
 
-    abstract void queryScoreByExam(String examName);
+    public abstract Integer queryScoreByExam(String examName);
 
-    abstract Integer addEntry(String name, Integer score);
+    public abstract Integer addEntry(String name, Integer score);
 
-    abstract Integer deleteEntry();
+    public abstract Integer deleteEntry(String name);
 
-    abstract void modifyEntry();
+    public abstract void modifyEntry(String examName, Integer score);
 
-    abstract void emptyAll();
+    public abstract void emptyAll();
 }

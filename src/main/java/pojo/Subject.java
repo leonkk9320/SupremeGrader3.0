@@ -19,9 +19,9 @@ public abstract class Subject {
     private Teacher teacher;
     private List<Question> questionList;
 
-    abstract void addQuestion();
+    public abstract void addQuestion(Question question);
 
-    abstract void dropQuestion();
+    public abstract void dropQuestion(int index);
 
 
 
