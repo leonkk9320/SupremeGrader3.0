@@ -1,2 +1,2 @@
-# SupremeGrader2.0
+# SupremeGrader3.0
 # For CSCI-4440
